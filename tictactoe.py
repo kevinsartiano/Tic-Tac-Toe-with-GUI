@@ -198,7 +198,12 @@ class TicTacToe:
         """
         Display a message box for a win
         """
-        messagebox.showinfo(message=f"Congrats!! Player {self.player} has won")
+        if not self.ai:
+            messagebox.showinfo(message=f"Congrats!! Player {self.player} has won")
+        elif self.player == self.ai:
+            messagebox.showinfo(message=f"Sorry!! You lost")
+        else:
+            messagebox.showinfo(message=f"Congrats!! You won")
         self.reset()
 
     def display_draw_message(self):
